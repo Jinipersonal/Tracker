@@ -18,20 +18,20 @@ const LocationsScreen = ({ navigation }) => {
             data={locations}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item }) => (
-                <TouchableOpacity onPress={()=>{
-                   navigation.navigate("Map",{selectedData:item})
+                <TouchableOpacity onPress={() => {
+                    navigation.navigate("Map", { selectedData: item })
                 }}>
-                <Card style={styles.card}>
-                <Card.Content>
-                    <Text variant="titleMedium" style={styles.title}>{item.title}</Text>
-                    <Text variant="bodyMedium" style={styles.address}> Location:{item.locationText}</Text>
-                    <View style={styles.row}>
-                        <Text variant="bodySmall" style={styles.latLong}> Lat: {item.latitude}</Text>
-                        <Text variant="bodySmall" style={styles.latLong}> Long: {item.longitude}</Text>
-                    </View>
-                </Card.Content>
-            </Card>
-            </TouchableOpacity>
+                    <Card style={styles.card}>
+                        <Card.Content>
+                            <Text variant="titleMedium" style={styles.title}>{item.title}</Text>
+                            <Text variant="bodyMedium" style={styles.address}> Location:{item.locationText}</Text>
+                            <View style={styles.row}>
+                                <Text variant="bodySmall" style={styles.latLong}> Lat: {item.latitude}</Text>
+                                <Text variant="bodySmall" style={styles.latLong}> Long: {item.longitude}</Text>
+                            </View>
+                        </Card.Content>
+                    </Card>
+                </TouchableOpacity>
             )}
         />
     );
@@ -44,20 +44,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5F5F5',
     },
     addButton: {
-        marginBottom: 10,
-    },
-    modal: {
-        backgroundColor: 'white',
-        padding: 20,
-        margin: 20,
-        borderRadius: 10,
-    },
-    input: {
-        borderBottomWidth: 1,
-        marginBottom: 10,
-    },
-    saveButton: {
-        marginTop: 10,
         marginBottom: 10,
     },
     list: {

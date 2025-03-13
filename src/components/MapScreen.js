@@ -32,7 +32,7 @@ const MapScreen = ({ navigation }) => {
     }, [selectedLocation]);
     useEffect(() => {
         if (route.params?.selectedData != undefined) {
-            console.log("---route.params.selectedData", route.params.selectedData);
+            // console.log("---route.params.selectedData", route.params.selectedData);
             let data = route.params.selectedData;
             data.latitudeDelta = 0.01;
             data.longitudeDelta = 0.01;
@@ -93,22 +93,11 @@ const MapScreen = ({ navigation }) => {
     return (
         <>
             {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}> */}
-            {console.log("-098u", existLocation,)}
-            {console.log("-5678", region)}
-            {console.log("-876", selectedLocation)
-            }
             <MapView style={{ flex: 1 }}
                 ref={mapRef}
                 onPress={(event) => {
                     handleMapPress(event)
                 }}
-                // initialRegion={{
-                //     latitude: existLocation ?existLocation.latitude : 10.6676864,
-                //     longitude:existLocation ?existLocation.longitude : 75.9888914,
-                //     latitudeDelta: 0.000912,
-                //     longitudeDelta: 0.00921,
-
-                // }}
                 initialRegion={region}
                 onRegionChangeComplete={(updatedRegion) => setRegion(updatedRegion)}
             >
